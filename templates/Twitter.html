@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter Opinion Mining</title>
+    <link rel="stylesheet" type="text/css" href="../static/twitter_style.css">
+  </head>
+
+  <body>
+    <div class="form">
+    
+    <h2>Twitter Opinion Mining</h2>
+    
+    <form action='/Twitter_Opinion_Mining' method="POST">
+      
+      <h3> Choose the method :</h3>
+      <input type="radio" id="Option1" name="Option" value="1">
+      <label for="Option1" style="color: tomato;"> By Screen Name </label><br>
+      <input type="radio" id="Option2" name="Option" value="2">
+      <label for="Option2" style="color: tomato;"> By Tag </label><br><br>
+
+      <br>
+      <div class="container">
+        <input type="text" name="ScreenName" required="required">
+        <label> Screen Name/ Hashtag </label>
+      </div>
+      
+      <div class="container">
+        <input type="text" name="Count" required="required">
+        <label> Analysis of how many tweets (max. tweets : 200)</label>
+      </div>
+
+      <br>
+      <button class="btn-1"><span> ANALYZE </span></button>
+      <br><br><br>
+
+    </form>
+    </div>
+
+    {% if error==0 %}
+      <script>
+        alert("Please enter a valid number !!!")
+      </script>
+
+    {% elif error==1 %}  
+      <script>
+        alert("Please enter a valid screen name/tag !!!")
+      </script>
+
+    {% else %}  
+      {% block body %} {% endblock %}
+
+    {% endif %}  
+
+  </body>
+</html>

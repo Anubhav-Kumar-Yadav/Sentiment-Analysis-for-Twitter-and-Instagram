@@ -1,0 +1,107 @@
+html{
+    height: 100%;
+  }
+  
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: #243b55;
+  }
+  
+  .form {
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 75vw;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgb(61, 235, 52);
+    text-align: center;
+  }
+  
+  .form .container {
+    position: relative;
+  }
+  
+  .form .container input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  .form .container label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .form .container input:focus ~ label,
+  .form .container input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  button{
+    position: relative;
+    border: none;
+    color: #03e9f4;
+    font-size: 18px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    background: transparent;
+    display: inline;
+  }
+  
+  p{
+    color: aquamarine;
+  }
+  
+  .box{
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 75vw;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  legend{
+    color: coral;
+  }
+  
+  fieldset{
+    border-color: coral;
+  }
+  
+  .inside{
+    /* width: 95%;  */
+    height: 300px; 
+    width: 1060px;
+    /* width: 65vw; */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    background-color: rgb(199, 187, 24);
+  }

@@ -1,0 +1,84 @@
+{% extends 'Twitter.html' %}
+
+{% block body %}
+ 
+    <fieldset class="box">
+    <legend>Recent Tweets</legend>  
+    <div class="inside">
+        <ol>
+          {% for tweet in timeline_tweets: %}
+            <li> {{tweet}} </li>
+            <br>
+          {% endfor %}         
+        </ol>
+    </div>
+    </fieldset>
+
+    <fieldset class="box">
+    <legend> Positive Tweets </legend> 
+    <div class="inside">  
+        <ol>
+          {% for tweet in pos_tweets: %}
+            <li> {{tweet}} </li>
+            <br>
+          {% endfor %}         
+        </ol>
+    </div>
+  </fieldset>
+  
+  <fieldset class="box">  
+    <legend> Negative Tweets </legend>  
+    <div class="inside"> 
+        <ol>
+          {% for tweet in neg_tweets: %}
+            <li> {{tweet}} </li>
+            <br>
+          {% endfor %}         
+        </ol>
+    </div>
+  </fieldset>
+
+   <fieldset class="box">    
+   <legend> Neutral Tweets </legend>  
+    <div class="inside">
+        <ol>
+          {% for tweet in neut_tweets: %}
+            <li> {{tweet}} </li>
+            <br>
+          {% endfor %}         
+        </ol>
+    </div>
+  </fieldset>
+  
+    <fieldset class="box" style="margin: 50px auto; width: 500px;">
+    <legend> Graphical representation </legend>
+    <div style="background-color: white; height: 300px;">
+      <canvas id="myChart"></canvas>
+    </div>
+  </fieldset>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" >  </script>   
+<script>
+
+var user = JSON.parse('{{ user| tojson | safe }}');
+var ctx = document.getElementById('myChart');
+ctx.height = 200;
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Positive Tweets', 'Negative Tweets', 'Neutral Tweets'],
+        datasets: [{
+            label: 'Number of Tweets',
+            data: [user.pos, user.neg, user.neu],
+            backgroundColor: ['rgba(0, 255, 132, 0.2)','rgba(255, 99, 132, 0.2)','rgba(255, 206, 86, 0.2)',],
+            borderColor: ['rgba(0, 255, 132, 1)','rgba(255, 99, 132, 1)','rgba(255, 206, 86, 1)'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+      maintainAspectRatio : false
+     }
+});
+</script>
+
+{% endblock %}

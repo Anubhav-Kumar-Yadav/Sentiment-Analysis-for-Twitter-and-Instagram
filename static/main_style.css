@@ -1,0 +1,62 @@
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: #453453;
+}
+
+a{
+    margin: 25px;
+}
+
+.fab{
+    margin: 100px auto;
+    color: white;
+}
+
+#twitter{
+    background-color:rgb(4, 170, 221);
+}
+
+#insta{
+    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+#caption{
+    margin-left: 50px;
+    text-align: center;
+}
+
+.container{
+    width: 800px;
+    height: 700px;
+    background: rgb(15, 15, 15);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner{
+    width: 300px;
+	height: 500px;
+    display: inline-block;
+	background: white;
+	margin: 25px 0px;
+	color: #2c3e50;
+    transition: transform 1s;
+    text-align: center;
+}
+  
+.inner:hover{
+    transform: scale(1.1); 
+    -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+}
+
+p{
+    color: white;
+    font-size: 2rem;
+    font-family: "Lucida Console";
+    font-weight: 900;
+}
